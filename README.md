@@ -45,7 +45,7 @@ rock-paper-scissors-js/
 ---
 
 ## 🌐 Live Demo
-Play it here: [GitHub Pages Demo](https://yourusername.github.io/rock-paper-scissors-js)
+Play it here: [GitHub Pages Demo](https://allanngigi.github.io/rock-paper-scissors-js/)
 
 ---
 
