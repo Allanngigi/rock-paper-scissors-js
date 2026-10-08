@@ -70,4 +70,4 @@ This project showcases my ability to:
 - Build interactive browser-based logic  
 - Present projects professionally with documentation and visuals  
 
-![Rock Paper Scissors Icon](https://copilot.microsoft.com/th/id/BCO.cb903d4b-f2f1-45e3-99c4-795823135f6f.png)
+![Rock Paper Scissors Icon](https://github.com/Allanngigi/rock-paper-scissors-js/blob/main/4.png)
