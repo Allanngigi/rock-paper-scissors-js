@@ -1,6 +1,8 @@
 // Global score variables
 let humanScore = 0;
 let computerScore = 0;
+let roundsPlayed = 0;
+const maxRounds = 5;
 
 // Choices array
 const hand = ['rock', 'paper', 'scissors'];
@@ -11,18 +13,10 @@ function getComputerChoice() {
   return hand[randomIndex];
 }
 
-// Function to get human's choice
-function getHumanChoice() {
-  let choice = prompt("Enter rock, paper, or scissors:");
-  return choice.toLowerCase();
-}
-
 // Function to play a single round
 function playRound(humanChoice, computerChoice) {
-  humanChoice = humanChoice.toLowerCase();
-
   if (humanChoice === computerChoice) {
-    return "It's a tie!";
+    return `It's a tie! You both chose ${humanChoice}.`;
   }
 
   if (
@@ -38,22 +32,46 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-// Function to play the game (3 rounds)
-function playGame() {
-  for (let i = 0; i < 3; i++) {
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-    console.log(playRound(humanChoice, computerChoice));
+// Handle a button click
+function handleChoice(humanChoice) {
+  if (roundsPlayed >= maxRounds) {
+    document.getElementById("final").innerText = "Game over! Please reset to play again.";
+    return;
   }
 
-  if (humanScore > computerScore) {
-    return "You win the game!";
-  } else if (computerScore > humanScore) {
-    return "You lose the game!";
-  } else {
-    return "The game is a tie!";
+  const computerChoice = getComputerChoice();
+  const roundResult = playRound(humanChoice, computerChoice);
+
+  roundsPlayed++;
+  document.getElementById("result").innerText = roundResult;
+  document.getElementById("score").innerText =
+    `Score: You ${humanScore} - Computer ${computerScore} (Round ${roundsPlayed}/${maxRounds})`;
+
+  if (roundsPlayed === maxRounds) {
+    if (humanScore > computerScore) {
+      document.getElementById("final").innerText = "🎉 You are the final winner!";
+    } else if (computerScore > humanScore) {
+      document.getElementById("final").innerText = "💻 Computer wins the game!";
+    } else {
+      document.getElementById("final").innerText = "🤝 It's a draw!";
+    }
   }
 }
 
-// Start the game
-console.log(playGame());
+// Reset the game
+function resetGame() {
+  humanScore = 0;
+  computerScore = 0;
+  roundsPlayed = 0;
+  document.getElementById("result").innerText = "";
+  document.getElementById("score").innerText = "";
+  document.getElementById("final").innerText = "";
+}
+
+// Attach event listeners once DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("rock").addEventListener("click", () => handleChoice("rock"));
+  document.getElementById("paper").addEventListener("click", () => handleChoice("paper"));
+  document.getElementById("scissors").addEventListener("click", () => handleChoice("scissors"));
+  document.getElementById("reset").addEventListener("click", resetGame);
+});
