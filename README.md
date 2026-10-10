@@ -30,7 +30,7 @@ Each round compares the player’s choice with a randomly generated computer cho
 1. Open the game in your browser.  
 2. Enter your choice: `rock`, `paper`, or `scissors`.  
 3. The computer randomly selects its move.  
-4. The console displays the round result and final winner after three rounds.
+4. The console displays the round result and final winner after five rounds.
 
 ---
 
