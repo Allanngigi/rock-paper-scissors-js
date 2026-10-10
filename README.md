@@ -7,7 +7,7 @@ This project demonstrates my understanding of **functions, conditionals, loops, 
 
 ## 🎯 Project Overview
 The game allows a human player to compete against the computer.  
-Each round compares the player’s choice with a randomly generated computer choice, updates the scores, and declares a winner after three rounds.
+Each round compares the player’s choice with a randomly generated computer choice, updates the scores, and declares a winner after five rounds.
 
 ---
 
