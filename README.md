@@ -16,7 +16,7 @@ Each round compares the player’s choice with a randomly generated computer cho
 - Case-insensitive player input via `prompt()`
 - Score tracking across rounds
 - Dynamic winner messages for each round
-- Final game result after three rounds
+- Final game result after five rounds
 
 ---
 
